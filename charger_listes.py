@@ -11,7 +11,7 @@ sera écrasé s'il existe da au moment du lancement du programme.
 
 
 from io import BytesIO
-import gzip, codecs
+import gzip, codecs, sys
 from urllib.request import Request
 from urllib.request import urlopen 
 
@@ -31,9 +31,11 @@ def charger(chemin):
 	request = Request(chemin)
 	request.add_header('Accept-encoding', 'gzip')
 	response = urlopen(request)
-	print(response.info())
+	#print(response.info())
 	info = response.info()
+	print('Chargement... ')
 	buf = BytesIO( response.read())
+	print('Decompression...')
 	f = gzip.GzipFile(fileobj=buf)
 	data = f.read()
 	return data.decode(errors='ignore')
@@ -51,11 +53,15 @@ def main():
 	adresses = [chemin_bt_level_1, chemin_bt_level_2, chemin_bt_level_3]
 
 	for adresse in adresses:
+		print(adresse)
 		contenus.append(charger(adresse))
+		print("Fini.\n")
 
+	print("\nCreation du fichier de sortie")
 	with codecs.open('./liste_filtrage_bittorrent.txt', 'w', encoding='utf8', errors='ignore') as sortie:
 		for contenu in contenus:
 			sortie.write(contenu)
+	print('Fichier de sortie termine')
 
 
 
