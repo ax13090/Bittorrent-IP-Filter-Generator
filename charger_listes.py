@@ -20,11 +20,11 @@ def charger(chemin):
 
 def main():
 	contenus = []
-#	adresses = [chemin_bt_level_1, chemin_bt_level_2, chemin_bt_level_3]
 	adresses = [
 'file:/Users/axel/Downloads/bt_level1.gz', 
 'file:/Users/axel/Downloads/bt_level2.gz', 
 'file:/Users/axel/Downloads/bt_level3.txt']
+	adresses = [chemin_bt_level_1, chemin_bt_level_2, chemin_bt_level_3]
 
 	for adresse in adresses:
 		contenus.append(charger(adresse))
