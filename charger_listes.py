@@ -4,6 +4,7 @@ from urllib.request import Request
 from urllib.request import urlopen 
 
 chemin_bt_level_1 = r'http://list.iblocklist.com/?list=bt_level1&fileformat=p2p&archiveformat=gz'
+chemin_bt_level_2 = r'http://list.iblocklist.com/?list=bt_level2&fileformat=p2p&archiveformat=gz'
 chemin_bt_level_3 = r'http://list.iblocklist.com/?list=bt_level3&fileformat=p2p&archiveformat=gz'
 
 def charger(chemin):
@@ -16,8 +17,8 @@ def charger(chemin):
 	buf = BytesIO( response.read())
 	f = gzip.GzipFile(fileobj=buf)
 	data = f.read()
-	print(data.decode(errors='ignore'))
+	return data.decode(errors='ignore')
 
 
 if __name__ == '__main__':
-	charger(r'file:/Users/axel/Downloads/bt_level3.txt')
+	print (charger(r'file:/Users/axel/Downloads/bt_level3.txt'))
