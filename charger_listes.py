@@ -16,8 +16,8 @@ def charger(chemin):
 	buf = BytesIO( response.read())
 	f = gzip.GzipFile(fileobj=buf)
 	data = f.read()
-	print(data)
+	print(data.decode(errors='ignore'))
 
 
 if __name__ == '__main__':
-	charger(chemin_bt_level_3)
+	charger(r'file:/Users/axel/Downloads/bt_level3.txt')
