@@ -1,12 +1,12 @@
 ''' 
-Ce script pour Python 3 récupèrtrois listes d'adresses IP a bannir sur les réseaux eer-to-Peer
+Ce script pour Python 3 récupèrtrois listes d'adresses IP a bannir sur les réseaux Peer-to-Peer
 Ces listes sont récupérées depuis le site ipblocklist.com
-Comme le site les fournit compressées en GZip, ce script se charge de ladécompression.
+Comme le site les fournit compressées en GZip, ce script se charge de la décompression.
 Il se charge aussi d'assembler les trois listes, en les concaténant vers un fichier dans le répertoire courant
 Ce script se lance sans argument, par exemple avec la commande suivante:
 	$ python3 charger_listes.py
 La sortie se situera dans le fichier liste_filtrage_bittorrent.txt du répertoire courant. Ce fichier 
-sera écrasé s'il existe da au moment du lancement du programme. 
+sera écrasé s'il existe déja au moment du lancement du programme. 
 '''
 
 
@@ -45,8 +45,8 @@ def charger(chemin):
 '''
 Fonction principale du programme
 Appelle trois fois la fonction charger() pour récupérer les trois listes
-Ouvre un fichier en écriture ; ce fichier est écrasé s'il existe da
-Replit le fichier avec la concaténation des trois listesrécupérées depuInternet
+Ouvre un fichier en écriture ; ce fichier est écrasé s'il existe deja
+Replit le fichier avec la concaténation des trois listes récupérées depuis Internet
 '''
 def main():
 	contenus = []
@@ -66,8 +66,8 @@ def main():
 
 
 '''
-Si ce fichier est le fichier passé en argument a l'interpréteuret non inclus en tant que modul
-on lance la fonction principale
+Si ce fichier est le fichier passé en argument a l'interpréteur et non inclus 
+en tant que module on lance la fonction principale
 '''
 if __name__ == '__main__':
 	main()
