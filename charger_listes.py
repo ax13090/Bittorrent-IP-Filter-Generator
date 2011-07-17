@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 ''' 
 Ce script pour Python 3 récupèrtrois listes d'adresses IP a bannir sur les réseaux Peer-to-Peer
 Ces listes sont récupérées depuis le site ipblocklist.com
