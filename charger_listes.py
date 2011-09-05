@@ -71,8 +71,9 @@ def main():
 		contenus.append(charger(adresse))
 		print("Fini.\n")
 
-	print("\nCreation du fichier de sortie")
-	with codecs.open('./liste_filtrage_bittorrent.txt', 'w', encoding='utf8', errors='ignore') as sortie:
+	fichier = './liste_filtrage_bittorrent.txt'
+	print("\nCreation du fichier de sortie : " + fichier)
+	with codecs.open(fichier, 'w', encoding='utf8', errors='ignore') as sortie:
 		for contenu in contenus:
 			sortie.write(contenu)
 	print('Fichier de sortie termine')
