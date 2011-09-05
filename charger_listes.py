@@ -31,9 +31,11 @@ prete a etre affichee ou inseree dans un fichier
 def charger(chemin):
 	request = Request(chemin)
 	request.add_header('Accept-encoding', 'gzip')
+
 	print('Connexion...')
 	response = urlopen(request)
 	info = response.info()
+
 	sys.stdout.write('Chargement... ')
 	sys.stdout.flush()
 	temps = time.time()
@@ -41,6 +43,7 @@ def charger(chemin):
 	buf = BytesIO(data)
 	temps = time.time() - temps
 	print ('terminé en %.3f secondes, %d octets lus' % (temps, len(data)))
+
 	print('Decompression...')
 	f = gzip.GzipFile(fileobj=buf)
 	data = f.read()
