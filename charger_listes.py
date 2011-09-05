@@ -32,7 +32,6 @@ def charger(chemin):
 	request = Request(chemin)
 	request.add_header('Accept-encoding', 'gzip')
 	response = urlopen(request)
-	#print(response.info())
 	info = response.info()
 	print('Chargement... ')
 	buf = BytesIO( response.read())
