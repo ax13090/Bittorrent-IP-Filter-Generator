@@ -44,11 +44,16 @@ def charger(chemin):
 	temps = time.time() - temps
 	print ('terminé en %.3f secondes, %d octets lus' % (temps, len(data)))
 
-	print('Decompression...')
+	sys.stdout.write('Decompression... ')
+	sys.stdout.flush()
+	temps = time.time()
 	f = gzip.GzipFile(fileobj=buf)
 	data = f.read()
-	return data.decode(errors='ignore')
+	temps = time.time() - temps
+	print('terminé en %.3f secondes, %d octets décompressés' % (temps, len(data)))
 
+	texte = data.decode(errors='ignore')
+	return texte
 
 
 '''
