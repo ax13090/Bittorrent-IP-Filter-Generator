@@ -38,7 +38,7 @@ def charger(chemin):
 	temps = time.time()
 	buf = BytesIO( response.read())
 	temps = time.time() - temps
-	print ('Chargé en %d s' % temps)
+	print ('terminé en %.3f s' % temps)
 	print('Decompression...')
 	f = gzip.GzipFile(fileobj=buf)
 	data = f.read()
