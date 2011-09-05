@@ -12,7 +12,7 @@ sera écrasé s'il existe déja au moment du lancement du programme.
 
 
 from io import BytesIO
-import gzip, codecs, sys
+import gzip, codecs, sys, time
 from urllib.request import Request
 from urllib.request import urlopen 
 
@@ -34,7 +34,10 @@ def charger(chemin):
 	response = urlopen(request)
 	info = response.info()
 	print('Chargement... ')
+	temps = time.time()
 	buf = BytesIO( response.read())
+	temps = time.time() - temps
+	print ('Chargé en %d s' % temps)
 	print('Decompression...')
 	f = gzip.GzipFile(fileobj=buf)
 	data = f.read()
