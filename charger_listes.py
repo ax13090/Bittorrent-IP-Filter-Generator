@@ -31,6 +31,7 @@ prete a etre affichee ou inseree dans un fichier
 def charger(chemin):
 	request = Request(chemin)
 	request.add_header('Accept-encoding', 'gzip')
+	print('Connexion...')
 	response = urlopen(request)
 	info = response.info()
 	sys.stdout.write('Chargement... ')
