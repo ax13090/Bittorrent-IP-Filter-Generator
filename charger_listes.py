@@ -72,11 +72,12 @@ def main():
 		print("Fini.\n")
 
 	fichier = './liste_filtrage_bittorrent.txt'
-	print("\nCreation du fichier de sortie : " + fichier)
+
 	with codecs.open(fichier, 'w', encoding='utf8', errors='ignore') as sortie:
+		print("\nCreation du fichier de sortie : " + fichier)
 		for contenu in contenus:
 			sortie.write(contenu)
-	print('Fichier de sortie termine')
+		print('Fichier de sortie termine')
 
 
 
